@@ -1,0 +1,67 @@
+Responnsible AI (Lecture by Margarita Boyarskaya)
+
+Problem of fairness: 
+- outsourcing decision making to machines will help us circumvent issues connected with human bias 
+
+Sources of Unfairness:
+- the usual suspect: DATA
+- bais in historical decision making = bais in the distribution of 
+    - outcome variable 
+    - predictor variabes 
+    - could be animus or/and structural 
+- bais in data collection practices 
+    - by class, race, geography
+    - USA is not the world!
+- bais in choice of target
+    - "arrests" stand for "Criminality"
+    - "medical spending" as proxy for "health"
+- sampling bias 
+- TAKEAWAY: there such thing as the world as it should be, and data as it is based on history 
+- the less usual suspectL "model specifications" 
+- different architectures and algorithms have different prpensity (incentive) to amplif class imbalance 
+- predictions are not end decisions 
+- humans decision-maker: 
+    - propensity to trust AI 
+- decision subjects:    
+    - propensity to enact recourse 
+    - gaming 
+- RESULT: a feedback loop
+- instead of thinking about fair MODELS, think about fair SYSTEMS 
+
+What does it mean to be fair?
+- first look at definitions of unfairness:
+    - BINARY CLASSIFICIATION
+    - desireable statistical properties 
+    - philosophical thought; contexts to some stakeholders (different definitions of right and wrong)
+    - many definitions are known to be not jointly satisifiable 
+- fairness can be seen as:
+    - demographic parity: the probability of independence are based on what is given; required that a decision independnt of the protected attribute 
+    - equality of opportunity: requires non-discrimination only for the "adversely affected" group
+    - equalized odds: given the outcome, attribute provides no further information about prediction (seeing the fairness in both the negative AND positive classification)
+    - calibration: given the prediction, attribte a rpovides no further information about the outcome 
+- although we can try to avoid sensitive attributes for data (gender, race, etc.), the computer needs this information to explain and differietiate baised data 
+- casual reasoning/discovery: tests all the sequential events that lead to a certain assumption; tests both positive and negatives "steps" to find patterns 
+
+- confusion matrix: true positives, false positives, true negatives, false negatives
+- for decisionmakers, we have to consider the things that lead to bais, like financial means, how the stakeholder looks to the public, etc. 
+- based on those decisions, it affects the accuracy rates (based on the measurements of the confusion matrix)
+
+- methods to disparate impact argument procedures: three step procedure (used in court and criminal justice)
+
+- mitigating unfairness
+    - two concepts to when proxy is justifiable: 
+        - X "stands in" for A 
+        - X "reflects" discrimination on the basis of A 
+    - (imperfect) 
+        - pretraining: workable solution: flip the labels, resample/bootstrap for class balance, "obfuscate" the effect of A on proxies
+        - in-training: regularize usig A chosen fairness metrix, fair representations, adversaril classification
+        - post-training: orthogonalize the predictions WRT the sensitive attribute, move the threshold, rank & flip some labels 
+    - registering features for your model as an audit tool. how can we use this during the in-development process?
+
+- Explainable AI:   
+    - two salient methods: 
+        - counterfactual explanations 
+        - feature attribution: rank order the features that appear or mattered the most to the final decision
+
+
+

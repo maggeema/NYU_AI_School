@@ -1,0 +1,47 @@
+Introduction to Machine Learning (Lecture lead by Prof. Nadrea Jones-Rooy)
+
+Data depends on different things:
+Momentary apprroximation: time and place
+Subjective apprroximation: What's worth measuring and how we measure it
+
+Science is a way to helpus understand data. 
+It takes a series of steps that is always tentive and iterative (lots of guessing and evolving)
+
+Critical thinking: question. observe. conclude.
+
+- AI thinking: Can we use computers to emulate human thought and perform tasks in real world enviornments?
+- ML thinking: How can we teach a machine to perform specific tasks and provide patterns or make improvements 
+- Deep Learning: How can we use neuronetworks to make predictions without human input?
+
+- Natural Learning Processing (NLP): training computers to understand and generate language
+    - is NOT neuro-lingustic programming (the way that we speak or interact with each other that affects the way programs work?)
+    - can computers learn, understand, reproduce, etc. language?
+    - interdisciplinary: AI, ML, lingustics, social sciences, humanities
+    - activities in NLP: 
+        - text classification: what "text" is it (processing "spam" emails or who a text might be from)
+        - topic discovery and modeling: captures meaning and themes of texts
+        - contextual extraction: pulled data from text to create a large data set 
+        - sentiment analysis: identity of moods or opinions of text (popular with yelp or movie or even political views)
+        - text to speech
+        - document summarization: creates a synopsis of a text
+        - machine translation: translates text from different dialects or languages 
+
+History of AI
+- early 1900s: 
+    - what is languages are a system? (sounds represent a concept and shift based on context; society shares certain understandings of concepts)
+    - structuralists: analyze the approach to ordering something that makes sense in languages or understandings
+- 1950: Alan Turing - "Father" of computer science; asked the important question of if there was ever a future where we can get machines to THINK
+- 1952: Hodkins-Huxley - study the systematic approaches to analyzing brains
+- 1958: first glimps of LISP
+- 1964: Eliza - a typewritten interface that imitates a psycharist using reflection techniques
+- throughout 1960s, US gov't starts to think about funding studies with computers but fail to go far with these studies
+- 1970s - 80s: computers are accessible kinda? start of IBM! ML is a thing!
+- 1990s: NLP models are popular. N-grams (thinking about words as units)
+- 2000s: Bengio et al, first neural language modeling; Apple's Siri; customer service robots; MASSIVE movement for different fields of computer science
+
+Types of ML:
+- supervised ML: uses strcutured data sets (x and y's) to predict and draw conclusions
+- unsupervised ML: uses structured BASED data and draws conclusions based on similarities
+- reinforcement Learning: uses rewards and punishments to optimize behavior
+
+

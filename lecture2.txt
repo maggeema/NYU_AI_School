@@ -1,0 +1,28 @@
+Fundamental concepts of AI (Lecture lead by Carlos Fernadandez-Granda)
+
+The probability mass function (pmf) p_a of ~a maps each value a to the probability that ~a = a.
+When there's data that only fits given a specific data set, the data error may referred to as overfit. 
+
+Training set: data used to fit the model 
+Test set: data used to evaluate the model 
+
+- estimate the probability of the total parameters (both empirial can test data)
+- use that as the assumption to build model
+- but you'll never know if the assumptions are true unless you get enough data
+
+Probability of a streak of length a is theta to the power of s times (1-theta)
+GIven a data point of a and a parametrix pmf p_theta, choose theta based on p_theta to the a power
+The likelihood can be measured using the product function or the log function
+
+When you change the parameter to a smaller number, youre able to find a better model that fits the data 
+
+
+Probabilitistic modelling:
+- we are interested in the joint pmf of all the variables
+- use conditional probability to measure when a variable changes in the data 
+- use the chain rule for discrete random variables 
+
+- in AI, usually if we assume the dataset is independent, the resulting models of the set will not be great for assumptions
+- if the graphs look similar, then it would be considered conditional indepedence
+
+CUrse of dimensionalitiy,Simpson's paradox!

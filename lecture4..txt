@@ -1,0 +1,59 @@
+Natural Language Processing (Lecture by YunTian Deng)
+
+Word representations / word embeddings using Seq2Seq and Attention (Era I)
+- embeddings represent each word as a vector (list) of numbers 
+- the numbers that are often used for metricies with each word vector represent its theta (frequency of word use, sequential patterns based on previous words, etc.)
+- utilizes linear representations (with prob. distr., you must make sure the probabilities add up to one and that it is positive)
+- in practice, the model is able to become more meaningful and "intelligent" without having task-specific assumptions 
+- this framwork solves different tasks by simply training on different datasets using conditional probabilities
+
+Bottleneck Issue
+- no matter how long the input is, a input is a fixed length vetor (ie: translating a very long document)
+- the better solution to this issue is ATTENTION
+- attention is a dynamic view of previous words 
+    - measures the similarities between current and previous states (or words)
+    - computes a weighted sum based on the similarities scores and learned "knowledge" from all the hidden states
+    - application: 
+        - machines translation (the computer is able to translate English words to another language based on the similiarities of the attention scores)
+        - summarization: uses attention scores to measure the words that have the most impact on the text
+        - image captioning: uses attention scores to detect the most important parts of an image to build a caption 
+        - math formula recognition: the computer is able to pay attention and keeps focus on certain notations/variables and how they are applied
+
+(Era II) Transformer
+- are recurrent connections necessary?
+    - yes, without attention, it helps to capture dependencies, but things like attention ALREADY capture dependencies 
+- (simplified) drops recurrent connections and doesn't necessarily make a model stronger
+    - with recurrence, to compute hidden states of a later stage, you need all the states from before (must be a sequential testing)
+    - but without recurrence, the calculations do not necessaily have to wait for other states to be identified (is more flexible due to something like attention)
+- impact of transformer: 
+    - fully parallelizable along the sequence length dimension 
+    - better leveraged parallel hardware (GPUs, multiple machines) for fast training 
+    - enabled training larger models on larger datasets
+    - further improved performance of various NLP tasks 
+
+(Era III) Pretraining 
+- in the old training paradigm, for specific tasks, there are specific training processes that optimize the parameters 
+- but, we still need to still use different models for different tasks. BUT, there are commonalities between parameters or tasks. 
+- there are resolutions using human understandings that can leverage the similarities between shared tasks 
+- Word2Vec predicts the middle word from context words using pretrained knowledge and implementations 
+- General contextual representations 
+        - ELMo: trained current neural network 
+        - BERT: pretained transformer 
+    - tranformer finetunes random parameters or pretrained models gives a good initalization for outputs 
+    - fintuning phase can leverage knowledge learned in the pretraining phease 
+- impact of transformation: pretraining enables leveraging massive data on the web 
+- improves MLP performance
+- changes the way researchers think of different NLP datasets even tasks
+- New NLP approaches are usually evaluated on multiples datasets at once 
+
+(Modern) General Pretrained Models 
+- More GPUs; bigger model, bigger training datasets 
+- Generative pretrained transformer (GPT)
+- how do we control these language models? directly ask it to do a task, and correct it (aka prompting with demonstrations)
+- another failure mode at reasoning (ie: prompting math problems and answer with a solution)
+- instructural training using finetuning of pretrained models (but this is expensive to collect data)
+- multimodal pretrained models: combining image and text
+- prompt to use external tools through APIs 
+
+"general methods that leverage computation are ultimately the most effective; in the short term, researchers seek to leverage their human knowledge of the domain, but the only thing that matters in the long un is the leveraging of computations"
+

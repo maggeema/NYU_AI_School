@@ -1,0 +1,64 @@
+Image priors and their application (lecture by Zahra Kadkhadaie)
+
+Biological vision: the "vision" or tranformation that our eyes use to make sense of the world 
+    - we have a stage vise process and basic elements of transformation compilations to create images
+    - Ai uses these principles to build articial replications of sight
+
+Computer vision: an internal model of the world using training and testing phases
+The difference between computer and bioligical vision is that they don't have the training and testing phases. 
+Biological vision comes from our natural learning process instead. 
+
+Examples: 
+
+High level tasks
+    - Object detection: what tesla uses to detect nearby vehicles and people
+    - Object tracking in videos: speed cameras
+    - Image classification: captia (identifiying images to confirm that youre a human)
+
+Low level tasks
+    - inpainting
+    - super resolution
+    - deblurring 
+These are examples of what photographers might use to adjust images (blur pixels, distort and recover pixels)
+THey are more so related to perception rather than deception; it takes a degraded image, inputs a task, and outputs a newly modified image
+
+How do we get machines to learn to perform tasks like the ones above?
+- non liner regression and supervised learning:
+    1. Pick a parametric function. We parameterize this function with a deep neral neuronetwork
+    2. Optimize parameters of this function
+    A deep neural network consists of a cascade of simple operations such as linear mapping and simple non-lenearities such as ReLUs
+        - convulutions (*): passes a weight through a linear operation to optimize and tranform; impose a pattern to a matrix (in small matricies, functions similar to a filter)
+            - images have a shift invariance / translation invariance property; they have features and patterns that are repeated everywhere
+            - convulutions are shift / translation invariances
+        - rectification: if the input in positive, it doent adjust; if it is negative, they set input to zero
+        - learning optimizations (supervised learning)
+            - ie: compute a more HD version of a noisy image: takes the distance of each pixel and minimizes the different
+                Uses gradient descent and non-linear functions to find the optimum parameters.
+                *!* Gradient is a vector/domain that points to the direction of greatest ascent (or descent if negative) *!*
+            - when there is more than one minimum point, it is known as a non-convex
+            - to calculate gradient of loss in deep learning, we use a standard method called back-propagation (basically, using the chain rule to a compositional function to create gradience)
+    Disadvantages of supervised learning:
+        - having to choose an archetectures (finding a good function for the optimization)
+        - this method is very data heavy; we need to train different networks for different tasks due to the non-linearity
+
+- alternative approach: probabilistic approach (the distribution of data to tell the optimal data; ie: the computer's way of telling the difference between a good and bad image [high and low values])
+    Since it is not easy to learn the prior knowledge that we have, computers use distrubution and pattern recognition to assume parameters. 
+    To avoid curse of dimensionality (too high of parameters), we assume simple parametric forms for priors
+    
+    Two approaches to prob. approach: 
+    (Gaussian distr.: a prob. distr. categorized by mean and variance; often related to a bell curve. Typically the bigger the std dev in the curve, the noisier the image)
+    (Prob. stric. helps computers differietiate randomness and correctness)
+    1. access to a prob. distr. of images to universally solve for all problems
+    2. 
+
+    For example, gradiance and denoising is the simplest and most basic example of using prob. distr. to optimize:
+    - relationship btwn denoising solution and prior: computers are able to use prob. distr. to estimate an explicit result 
+    - it takes the modulated training results, subtracts the input and the output, and results in a formula to solve tasks for various samples/inputs 
+    - depending on how narrow the convuluting distr. is, the more diffusion there is (diffusion adds noise to an image)
+    - using iteration, you want to keep following the direction of gradience until the noise if small enough (or when the computer is able to meet your criteria)
+    - testing the different trajectories allow for the computer to rearrange problems in the image to result in a "good" solution
+    - ENHANCEMENT: given some part of the image, the computer is able to generate a linear constraint and use conditional sampling and linear inverse method to solve problems
+    - degradation is the inverse; to generate content to a missing part of a photo, the computer will test different/random points to fit the constraints
+    - the computer is also able to degrade/fill in blanks using averging 
+    
+
